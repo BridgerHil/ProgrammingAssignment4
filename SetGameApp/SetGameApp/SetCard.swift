@@ -24,6 +24,7 @@ struct SetCard : Identifiable, Equatable {
     var count: Int
     var id: Int
     
+
     var isSelected: Bool
     var isMatched: Bool
     var isMisMatched: Bool

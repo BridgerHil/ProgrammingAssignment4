@@ -14,15 +14,17 @@ struct ContentView: View {
     var body: some View {
         VStack {
             gameBody
-            Spacer()
-            showDeckCount
-            Spacer()
+                .padding(.vertical)
+
             HStack {
-                newGame
+                discardBody
                 Spacer()
-                plusThree
+                deckBody
             }
             .padding(.horizontal)
+    
+            newGame
+         
         }
     }
     
@@ -49,12 +51,68 @@ struct ContentView: View {
         }
     }
     
-    var plusThree: some View {
+//    var plusThree: some View {
+//        Button {
+//            viewModel.addThreeCards()
+//        } label: {
+//            Text("Add 3 Cards")
+//                .foregroundColor(.red)
+//        }
+//    }
+    
+    var discardBody: some View {
+        VStack {
+            DiscardPileView()
+            Text("\n")
+        }
+    }
+    
+    
+    var deckBody: some View {
         Button {
             viewModel.addThreeCards()
         } label: {
-            Text("Add 3 Cards")
-                .foregroundColor(.red)
+            VStack {
+                DeckPileView()
+                Text("Add 3 Cards\n\(viewModel.deckCounter()) Cards Left")
+                
+            }
+            
+            
+        }
+    }
+}
+
+struct DiscardPileView: View {
+    @ObservedObject var viewModel = ViewModel()
+    var body: some View {
+        if viewModel.model.discardDeck.isEmpty {
+            GeometryReader { geometry in
+                VStack {
+                    let roundedRectangle = RoundedRectangle(cornerRadius: 10)
+                    roundedRectangle.fill()
+                        .foregroundColor(Color.white)
+                    roundedRectangle.stroke(lineWidth: 3.0)
+                        .foregroundColor(Color.black)
+                }
+            }
+        } else {
+            let discardDeckLength = viewModel.model.discardDeck.count - 1
+            SetCardView(viewModel.model.discardDeck[discardDeckLength])
+        }
+    }
+}
+
+struct DeckPileView: View {
+    var body: some View {
+        GeometryReader { geometry in
+            VStack {
+                let roundedRectangle = RoundedRectangle(cornerRadius: 10)
+                roundedRectangle.fill()
+                    .foregroundColor(Color.white)
+                roundedRectangle.stroke(lineWidth: 3.0)
+                    .foregroundColor(Color.black)
+            }
         }
     }
 }
@@ -97,6 +155,11 @@ struct SetCardView: View {
                         .clipShape(getPath(for: setCard, in: geometry.frame(in: .local)))
                 }
             }
+         
+            .rotationEffect(Angle.degrees(setCard.isMatched ? 360 : 0))
+            .animation(Animation.linear(duration: 3))
+            .rotationEffect(Angle.degrees(setCard.isMisMatched ? 45 : 0))
+            .animation(Animation.linear(duration: 1))
         }
         .padding()
     }

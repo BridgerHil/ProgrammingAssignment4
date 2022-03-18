@@ -22,6 +22,7 @@
 		DC1159D627D5597D00130285 /* SetGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1159D527D5597D00130285 /* SetGame.swift */; };
 		DC1159D827D55E5E00130285 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1159D727D55E5E00130285 /* ViewModel.swift */; };
 		DC1159DA27D5632300130285 /* AspectVGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1159D927D5632300130285 /* AspectVGrid.swift */; };
+		DCE7090B27E53EC800C9CFAE /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE7090A27E53EC800C9CFAE /* Cardify.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		DC1159D527D5597D00130285 /* SetGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGame.swift; sourceTree = "<group>"; };
 		DC1159D727D55E5E00130285 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		DC1159D927D5632300130285 /* AspectVGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectVGrid.swift; sourceTree = "<group>"; };
+		DCE7090A27E53EC800C9CFAE /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				DC1159D727D55E5E00130285 /* ViewModel.swift */,
 				DC1159A327D54BE200130285 /* ContentView.swift */,
 				DC1159D927D5632300130285 /* AspectVGrid.swift */,
+				DCE7090A27E53EC800C9CFAE /* Cardify.swift */,
 				DC1159CB27D54C7900130285 /* SetCard.swift */,
 				DC1159D327D557EA00130285 /* SetCardDeck.swift */,
 				DC1159D527D5597D00130285 /* SetGame.swift */,
@@ -281,6 +284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCE7090B27E53EC800C9CFAE /* Cardify.swift in Sources */,
 				DC1159D427D557EA00130285 /* SetCardDeck.swift in Sources */,
 				DC1159D827D55E5E00130285 /* ViewModel.swift in Sources */,
 				DC1159D227D54ED100130285 /* Squiggle.swift in Sources */,
