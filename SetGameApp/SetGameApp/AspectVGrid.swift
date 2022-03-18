@@ -18,6 +18,7 @@ struct AspectVGrid<Item, ItemView>: View where ItemView: View, Item: Identifiabl
         self.content = content
     }
     
+    
     var body: some View {
         GeometryReader { geometry in
             ScrollView {

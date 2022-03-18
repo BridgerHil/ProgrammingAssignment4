@@ -19,7 +19,7 @@ struct SetGame {
         
         //Discards matched cards after selecting a 4th card
         for i in (0...cards.count-1).reversed() {
-            print(i)
+ 
             if cards[i].isMatched == true {
                 discardDeck.append(cards.remove(at: i))
             }
@@ -49,6 +49,7 @@ struct SetGame {
             if setLogic() {
                 for i in 0..<indexArray.count {
                     cards[indexArray[i]].isMatched = true
+                    cards[indexArray[i]].isMisMatched = false
                     cards[indexArray[i]].isSelected = false
                 }
             } else {
@@ -91,6 +92,9 @@ struct SetGame {
                     cards.append(currentDeck.remove())
                 }
             }
+        }
+        for _ in 0...2 {
+            cards.append(currentDeck.remove())
         }
     }
     
